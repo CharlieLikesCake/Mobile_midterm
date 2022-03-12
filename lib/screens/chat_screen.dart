@@ -469,15 +469,12 @@ class _AppBarTitle extends StatelessWidget {
   }
 }
 
-/// Widget to show the current list of typing users
 class TypingIndicator extends StatelessWidget {
-  /// Instantiate a new TypingIndicator
   const TypingIndicator({
     Key? key,
     this.alternativeWidget,
   }) : super(key: key);
 
-  /// Widget built when no typings is happening
   final Widget? alternativeWidget;
 
   @override
@@ -520,13 +517,8 @@ class TypingIndicator extends StatelessWidget {
   }
 }
 
-/// Widget that builds itself based on the latest snapshot of interaction with
-/// a [Stream] of type [ConnectionStatus].
-///
-/// The widget will use the closest [StreamChatClient.wsConnectionStatusStream]
-/// in case no stream is provided.
+
 class ConnectionStatusBuilder extends StatelessWidget {
-  /// Creates a new ConnectionStatusBuilder
   const ConnectionStatusBuilder({
     Key? key,
     required this.statusBuilder,
@@ -535,16 +527,9 @@ class ConnectionStatusBuilder extends StatelessWidget {
     this.loadingBuilder,
   }) : super(key: key);
 
-  /// The asynchronous computation to which this builder is currently connected.
   final Stream<ConnectionStatus>? connectionStatusStream;
-
-  /// The builder that will be used in case of error
   final Widget Function(BuildContext context, Object? error)? errorBuilder;
-
-  /// The builder that will be used in case of loading
   final WidgetBuilder? loadingBuilder;
-
-  /// The builder that will be used in case of data
   final Widget Function(BuildContext context, ConnectionStatus status)
       statusBuilder;
 
