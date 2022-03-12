@@ -1,14 +1,15 @@
-import 'package:chat_app/models/models.dart';
-import 'package:chat_app/screens/screens.dart';
-import 'package:chat_app/widgets/widgets.dart';
+import 'package:chatter/models/models.dart';
+import 'package:chatter/screens/screens.dart';
+import 'package:chatter/theme.dart';
+import 'package:chatter/widgets/display_error_message.dart';
+import 'package:chatter/widgets/widgets.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:jiffy/jiffy.dart';
-import 'package:chatter/widgets/display_error_message.dart';
 import 'package:stream_chat_flutter_core/stream_chat_flutter_core.dart';
 import 'package:chatter/app.dart';
 
-import '../helper.dart';
+import '../helpers.dart';
 
 class MessagesPage extends StatefulWidget {
   const MessagesPage({Key? key}) : super(key: key);
@@ -94,6 +95,7 @@ class _MessageTile extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(
+              color: Theme.of(context).dividerColor,
               width: 0.5,
             ),
           ),
@@ -175,10 +177,12 @@ class _MessageTile extends StatelessWidget {
               style: (count > 0)
                   ? const TextStyle(
                       fontSize: 12,
+                      color: AppColors.secondary,
                     )
                   : const TextStyle(
                       fontSize: 12,
-                     ),
+                      color: AppColors.textFaded,
+                    ),
             );
           },
         );
@@ -216,6 +220,7 @@ class _MessageTile extends StatelessWidget {
             fontSize: 11,
             letterSpacing: -0.2,
             fontWeight: FontWeight.w600,
+            color: AppColors.textFaded,
           ),
         );
       },
@@ -244,7 +249,8 @@ class _Stories extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w900,
                     fontSize: 15,
-                   ),
+                    color: AppColors.textFaded,
+                  ),
                 ),
               ),
               Expanded(
