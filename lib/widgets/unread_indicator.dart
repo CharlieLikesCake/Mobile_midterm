@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:stream_chat_flutter_core/stream_chat_flutter_core.dart';
 
+import '../theme.dart';
+
 /// Widget for showing an unread indicator
 class UnreadIndicator extends StatelessWidget {
   /// Constructor for creating an [UnreadIndicator]
@@ -23,6 +25,7 @@ class UnreadIndicator extends StatelessWidget {
           }
           return Material(
             borderRadius: BorderRadius.circular(8),
+            color: AppColors.secondary,
             child: Padding(
               padding: const EdgeInsets.only(
                 left: 5,
