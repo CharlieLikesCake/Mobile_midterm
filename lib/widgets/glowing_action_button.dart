@@ -1,3 +1,4 @@
+import 'package:chatter/theme.dart';
 import 'package:flutter/material.dart';
 
 class GlowingActionButton extends StatelessWidget {
@@ -32,6 +33,7 @@ class GlowingActionButton extends StatelessWidget {
         child: Material(
           color: color,
           child: InkWell(
+            splashColor: AppColors.cardLight,
             onTap: onPressed,
             child: SizedBox(
               width: size,
